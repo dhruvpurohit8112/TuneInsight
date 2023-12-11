@@ -1,25 +1,9 @@
-# TuneInsight
-![GitHub watchers](https://img.shields.io/github/watchers/d-elicio/Music-Recommender-System-from-scratch?style=social) 
-![GitHub forks](https://img.shields.io/github/forks/d-elicio/Music-Recommender-System-from-scratch?style=social)
-![GitHub Repo stars](https://img.shields.io/github/stars/d-elicio/Music-Recommender-System-from-scratch?style=social)
-![GitHub last commit](https://img.shields.io/github/last-commit/d-elicio/Music-Recommender-System-from-scratch?style=plastic)
+## TuneInsight
 
-Design and implementation of different simple state-of-art models for a musical recommendation system from scratch, useful to suggest to users of an
-hypothetic music platform the most relevant songs they *might like* and they *might add to their playlist* of favorite songs based on the songs they previously have listened to on the platform.
-
-## 🚀 About Me
-I'm a computer science Master's Degree student and this is one of my university project. 
-See my other projects here on [GitHub](https://github.com/d-elicio)!
-
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://d-elicio.github.io)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/domenico-elicio/)
+Design and implementation of different simple state-of-art models for a musical recommendation system from scratch, useful to suggest to users of an hypothetic music platform the most relevant songs they *might like* and they *might add to their playlist* of favorite songs based on the songs they previously have listened to on the platform.
 
 
-## Google Colab
-See this project also on [Google Colab](https://colab.research.google.com/drive/18WDle4Y_Ow_MhPnz2GD2qlWlkjf9vVj5?usp=sharing) where the *interactive graph* is available.
-
-
-# 💻 The project
+## The project
 Nowadays all major companies use *recommendation systems* to provide suggestions for items that are most pertinent to a particular user, and in this project, some of the main used recommender models have been implemented *from scratch* to evaluate, at the end, all their performance.
 
 The models that have been implemented in this project are:
@@ -101,7 +85,3 @@ computed.
 At the end of our project, an **interactive graph** with all the *Precision@k* and *Recall@k* values **for all the implemented methods** is shown.
 
 ![all_graph](https://user-images.githubusercontent.com/96207365/226410766-a7d2fa51-499c-4436-9d52-4f99bc61c814.png)
-
-
-## Support
-For any support, error corrections, etc. please email me at domenico.elicio13@gmail.com
