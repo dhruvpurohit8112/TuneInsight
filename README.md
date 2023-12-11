@@ -1,4 +1,4 @@
-# Music Recommender System from scratch 
+# TuneInsight
 ![GitHub watchers](https://img.shields.io/github/watchers/d-elicio/Music-Recommender-System-from-scratch?style=social) 
 ![GitHub forks](https://img.shields.io/github/forks/d-elicio/Music-Recommender-System-from-scratch?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/d-elicio/Music-Recommender-System-from-scratch?style=social)
