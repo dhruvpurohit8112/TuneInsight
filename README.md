@@ -20,14 +20,12 @@ The models that have been implemented in this project are:
 For this project a subset of the famous [**Million Song Dataset**](https://millionsongdataset.com) has been used. In particular *two* main datasets has been merged together to form the final dataset used in this project: the [**Echo Nest
 Taste Profile dataset**](https://millionsongdataset.com/tasteprofile/) which contains (**user_id, song_id, listen_count**) triplets for 1M users and the [**Last.fm dataset**](https://millionsongdataset.com/tasteprofile/) which contain songs’ information in the form (**song_id, artist, title, tags**) where *‘tags’* stands for the genre of each song. The final merged dataset used contains *500k+* users and *8k+* songs with their relative genres
 
-![dataset](https://user-images.githubusercontent.com/96207365/226398493-5d557967-ef2b-4faa-b80c-9894ff38d101.jpg)
 
 ### Data Exploration
 Most of the *500k+* users in the dataset have listened only *one* song *one* time as shown in Figure below. This could cause problems to the evaluation of the implemented models (because we didn’t have enough information on a user to suggest him songs and evaluate the correctness of our recommendations). Therefore, some dataset cleaning operations were carried out to remove all those users with a total number of listening less than a fixed treshold.
 
-![distribuzione ascolti](https://user-images.githubusercontent.com/96207365/226400612-d494a218-7f5d-425d-a819-8d8cb3c4d2a5.jpg)
 
-In our project, we have transformed all the **implicit ratings** to **explicit** ones by computing the *listening frequency* for every song
+In the project, we have transformed all the **implicit ratings** to **explicit** ones by computing the *listening frequency* for every song
 listened by every user and normalizing it in a range [1-5] as if the user had rated all his listened songs **from 1 to 5 stars**. Then, from a simple analysis on the *distribution of all ratings* in the dataset it is easy to see that the most used rating has been *“1-star”* (due to the fact that most of our users have listened only one song).
 
 ![ratings_distribution-removebg-preview](https://user-images.githubusercontent.com/96207365/226417083-07e3e610-4a7e-4f9a-8a9d-45b5e0c4189a.png)
@@ -42,30 +40,24 @@ At the end of the Explorative data Analysis phase, also a visual representation 
 ## Implemented methods
 - **Random Recommender:** model that has also been used as baseline to compare the performance of all the other more complex methods. Thus, the random is the simplest recommendation model which proposes to the user *random songs* without taking into account his tastes.
 - **Popularity-based Recommender:** it recommends to every user the *most popular songs*. In our work this model was build in such a way that the system doesn’t recommend the absolute most listened songs (because there are some users that have listened a single song even 200 times, and this outlier behavior could influence our recommendations), so, the model was implemented to suggest songs listened *by the major number of different users* (that is the definition of *‘popularity’*).
+  
 - **Memory-based Collaborative Filtering**:
     - **User-based CF:** it uses the similarity between users as the basis for the computation of the recommendations. For this method the *Pearson Correlation* has been used as *similarity measure* because, as specified in the scientific literature, this measure gives the best results for the recommenders in terms of performance. 
 
-    ![user_based](https://user-images.githubusercontent.com/96207365/226405216-160ddec8-f13f-46ed-a6f5-ef5309ed90f4.jpg)
 
     - **Item-based CF:** it uses the *cosine-similarity* as similarity metric among the items to compute the recommendations for the users.
 
-    ![item_based](https://user-images.githubusercontent.com/96207365/226405301-c5396401-25f6-4627-b03a-562c1dbd553a.jpg)
 
 - **Model-based Collaborative Filtering:**
     - **Truncated SVD:** it uses mathematical models to produce a *score* for each item to recommend to every user. In particular, the *sparse User-Item matrix* is decomposed into 3 different matrices **U**, **sigma** and **V^T** useful to retrieve hidden common features between the items and useful to make better recommendations.
 
-    ![svd](https://user-images.githubusercontent.com/96207365/226407062-ad0c0dcb-5c97-4844-bbab-55a5848a570c.jpg)
-    
- (*In our project the *Sigma* matrix is a squared one, not like in the image above (it is just an example image)*)
 
-- **Content-based:** instead of using only similarity measures between users or items, also some **features** of the listened songs are exploited to compute the recommendations. In particular, in this project the used features regard the **musical genre** of the songs, useful to make the right recommendations. 
+    - **Content-based:** instead of using only similarity measures between users or items, also some **features** of the listened songs are exploited to compute the recommendations. In particular, in this project the used features regard the **musical genre** of the songs, useful to make the right recommendations. 
 
-![Content-based_HD](https://user-images.githubusercontent.com/96207365/226407550-d9434a2e-3857-42a5-a18b-34e857295baa.jpg)
+
 
 
 In particular, in our project, for the *content-based model*, after the computation of the final user-item matrix with the computed *scores* for all songs to recommend, a further step has been done to improve the recommendations by calculating also the **Euclidean distance** between all users and generate the final recommendations taking into account also this *“user-similarity”* metric.
-
-![user_similarity_heatmap](https://user-images.githubusercontent.com/96207365/226409001-6cb2574f-87b4-4b45-a2bc-f2b6a9f7b904.jpg)
 
 
 ## Models evaluation
